@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::post('/create-user', [AuthController::class, 'customSignup'])->name('user
 
 Route::get('/dashboard', [AuthController::class, 'dashboardView'])->name('dashboard');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/jangka-pendek', [DashboardController::class, 'jangkaPendekView'])->name('jangka_pendek');

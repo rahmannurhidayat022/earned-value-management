@@ -8,7 +8,7 @@
             <div class="card-title h4 mb-4">Dashboard</div>
             <div class="row">
                 <div class="col-3">
-                    <a style="text-decoration: none;" class="text-dark" href="#">
+                    <a style="text-decoration: none;" class="text-dark" href="/jangka-pendek">
                         <div style="min-height: 200px" class="card border border-success p-4 d-flex align-items-center justify-content-center">
                             <img width="60px" src="{{ asset('icons/chevron-up.svg') }}" alt="dollar">
                             <p class="text-center mt-4">Perhitungan Jangka Pendek</p>
