@@ -28,3 +28,5 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/counts', [DashboardController::class, 'index'])->name('counts');
 Route::post('/create-proyek', [DashboardController::class, 'addDataProyek'])->name('proyek.add');
+
+Route::get('/add-count', [DashboardController::class, 'addCountsView'])->name('addcounts.view');

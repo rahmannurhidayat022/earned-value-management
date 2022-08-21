@@ -43,4 +43,11 @@ class DashboardController extends Controller
         return redirect('counts')->withSuccess('Successfully!');
     }
 
+    public function addCountsView()
+    {
+        if(Auth::check()) {
+            return view('admin.add_counts');
+        }
+        return redirect("login")->withSuccess('Access is not permitted');
+    }
 }
