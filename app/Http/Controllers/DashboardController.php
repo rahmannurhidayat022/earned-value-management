@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Proyek;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
 {
-    public function jangkaPendekView()
+    public function index()
     {
         if(Auth::check()){
-            return view('admin.jangka_pendek', [
-                'proyeks' => Proyek::all(),
+            return view('admin.counts', [
+                'proyeks' => Proyek::paginate(5),
             ]);
         }
         return redirect("login")->withSuccess('Access is not permitted');
@@ -36,8 +37,10 @@ class DashboardController extends Controller
             'ptc' => $data['ptc'],
             'ptt' => $data['ptt'],
             'pv' => $data['pv'],
-            'ac' => $data['ev'],
+            'ac' => $data['ac'],
+            'ev' => $data['ev'],
         ]);
+        return redirect('counts')->withSuccess('Successfully!');
     }
 
 }

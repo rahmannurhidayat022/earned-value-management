@@ -3,9 +3,10 @@
 @section('sidecontent')
 
 <div class="pt-4 container">
-    <div class="card border-0 p-5 shadow-sm">
+    @extends('alert')
+    <div class="card border-0 p-2 shadow-sm">
         <div class="card-body">
-            <div class="card-title h4 mb-4">Perhitungan Jangka Pendek</div>
+            <div class="card-title h4 mb-4">Data Proyek</div>
             <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Tambah Data Proyek
             </button>
@@ -26,14 +27,15 @@
                             <th scope="col">ETC</th>
                             <th scope="col">ECC</th>
                             <th scope="col">ECT</th>
+                            <th scope="col">Jangka Proyek</th>
                             <th scope="col">Keterangan</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if ($proyeks && count($proyeks) > 0)
-                            @foreach ($proyeks as $proyek)
+                            @foreach ($proyeks as $key => $proyek)
                             <tr>
-                                <td>#</td>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{ $proyek->nama_proyek }}</td>
                                 <td>{{ $proyek->ptc }}</td>
                                 <td>{{ $proyek->ptt }}</td>
@@ -46,8 +48,12 @@
                                 <td>{{ $proyek->etc }}</td>
                                 <td>{{ $proyek->ecc }}</td>
                                 <td>{{ $proyek->ect }}</td>
+                                <td>{{ $proyek->jangka_proyek }}</td>
                                 <td>
-                                    <div class="btn btn-primary btn-block">Hitung</div>
+                                    <div class="d-grid gap-2">
+                                        <div class="btn btn-secondary btn-sm">Perbaharui</div>
+                                        <div class="btn btn-danger btn-sm">Delete</div>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
@@ -62,6 +68,7 @@
                         @endif
                     </tbody>
                 </table>
+                {{ $proyeks->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>
@@ -75,30 +82,31 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
+            <form action="{{ route('proyek.add') }}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label for="nama_proyek" class="form-label">Nama Proyek</label>
-                    <input type="text" class="form-control" id="nama_proyek">
+                    <input type="text" class="form-control" id="nama_proyek" name="nama_proyek">
                 </div>
                 <div class="mb-3">
                     <label for="ptc" class="form-label">Anggaran Proyek/PTC</label>
-                    <input type="number" class="form-control" id="ptc">
+                    <input type="number" class="form-control" id="ptc" name="ptc">
                 </div>
                 <div class="mb-3">
-                    <label for="ptc" class="form-label">Total waktu proyek/PTT</label>
-                    <input type="number" class="form-control" id="ptc">
+                    <label for="ptt" class="form-label">Total waktu proyek/PTT</label>
+                    <input type="number" class="form-control" id="ptt" name="ptt">
                 </div>
                 <div class="mb-3">
                     <label for="pv" class="form-label">PV</label>
-                    <input type="number" class="form-control" id="pv">
+                    <input type="number" class="form-control" id="pv" name="pv">
                 </div>
                 <div class="mb-3">
                     <label for="ev" class="form-label">EV</label>
-                    <input type="number" class="form-control" id="ev">
+                    <input type="number" class="form-control" id="ev" name="ev">
                 </div>
                 <div class="mb-3">
                     <label for="ac" class="form-label">AC</label>
-                    <input type="number" class="form-control" id="ac">
+                    <input type="number" class="form-control" id="ac" name="ac">
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </form>

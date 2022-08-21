@@ -14,14 +14,8 @@
                 </li>
                 <li class="nav-item d-flex align-items-center py-2 ps-3 rounded bg-light my-1">
                     <img class="me-1" width="18px" src="{{ asset('icons/database.svg') }}" alt="user icon">
-                    <a class="nav-link text-dark" href="#">
+                    <a class="nav-link text-dark" href="/counts">
                         Data Proyek
-                    </a>
-                </li>
-                <li class="nav-item d-flex align-items-center py-2 ps-3 rounded bg-light my-1">
-                    <img width="18px" src="{{ asset('icons/divide.svg') }}" alt="user icon">
-                    <a class="nav-link text-dark" href="#">
-                        Hasil Perhitungan
                     </a>
                 </li>
             </ul>

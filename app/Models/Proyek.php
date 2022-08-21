@@ -11,7 +11,8 @@ class Proyek extends Model
     protected $fillable = [
         'nama_proyek',
         'user_id',
-        'anggaran_proyek',
+        'ptc',
+        'ptt',
         'pv',
         'ev',
         'ac',

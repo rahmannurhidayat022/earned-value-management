@@ -26,4 +26,5 @@ Route::post('/create-user', [AuthController::class, 'customSignup'])->name('user
 Route::get('/dashboard', [AuthController::class, 'dashboardView'])->name('dashboard');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/jangka-pendek', [DashboardController::class, 'jangkaPendekView'])->name('jangka_pendek');
+Route::get('/counts', [DashboardController::class, 'index'])->name('counts');
+Route::post('/create-proyek', [DashboardController::class, 'addDataProyek'])->name('proyek.add');
