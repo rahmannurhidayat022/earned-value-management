@@ -11,7 +11,7 @@ class DashboardController extends Controller
     {
         if(Auth::check()){
             return view('admin.jangka_pendek', [
-                'proyek' => Proyek::all(),
+                'proyeks' => Proyek::all(),
             ]);
         }
         return redirect("login")->withSuccess('Access is not permitted');

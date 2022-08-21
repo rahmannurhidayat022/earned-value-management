@@ -19,7 +19,8 @@ return new class extends Migration
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama_proyek');
-            $table->bigInteger('anggaran_proyek');
+            $table->bigInteger('ptc');
+            $table->bigInteger('ptt');
             $table->bigInteger('pv');
             $table->bigInteger('ev');
             $table->bigInteger('ac');
