@@ -91,4 +91,14 @@ class DashboardController extends Controller
         }
         return redirect("login")->withSuccess('Access is not permitted');
     }
+
+    public function removeProyek($proyek_id)
+    {
+        if(Auth::check()) {
+            Proyek::find($proyek_id)->delete();
+            
+            return redirect("counts")->withSuccess('Successfully');
+        }
+        return redirect("login")->withSuccess('Access is not permitted');
+    }
 }

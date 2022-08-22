@@ -56,10 +56,14 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <div class="d-grid gap-2">
-                                        <a href="/update-count/{{$proyek->id}}" class="btn btn-secondary btn-sm">Perbaharui</a>
-                                        <div class="btn btn-danger btn-sm">Delete</div>
-                                    </div>
+                                    <form action="{{url('/counts/delete/'.$proyek->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class="d-grid gap-2">
+                                            <a href="/update-count/{{$proyek->id}}" class="btn btn-secondary btn-sm">Perbaharui</a>
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

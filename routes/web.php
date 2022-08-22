@@ -32,3 +32,4 @@ Route::post('/create-proyek', [DashboardController::class, 'addDataProyek'])->na
 Route::get('/add-count', [DashboardController::class, 'addCountsView'])->name('addcounts.view');
 Route::get('/update-count/{proyek_id}', [DashboardController::class, 'updateCountsView'])->name('updatecounts.view');
 Route::put('/counts/update/{proyek_id}', [DashboardController::class, 'updateCounts'])->name('counts.update');
+Route::delete('/counts/delete/{proyek_id}', [DashboardController::class, 'removeProyek'])->name('counts.delete');
