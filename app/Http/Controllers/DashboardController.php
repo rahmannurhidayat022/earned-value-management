@@ -92,6 +92,15 @@ class DashboardController extends Controller
                 'ac' => 'required',
                 'jangka_proyek' => 'required',
             ]);
+
+            $cv = $request->ev - $request->ac;
+            $sv = $request->ev - $request->pv;
+            $spi = $request->ev / $request->pv;
+            $cpi = $request->ev / $request->ac;
+            $etc = ($request->ptc - $request->ev) / $cpi;
+            $ecc = $request->ptc/$cpi;
+            $ect = $request->ptt / $spi;
+
             $proyek = Proyek::find($proyek_id);
             $proyek->nama_proyek = $request->input('nama_proyek');
             $proyek->ptc = $request->input('ptc');
@@ -100,6 +109,13 @@ class DashboardController extends Controller
             $proyek->ev = $request->input('ev');
             $proyek->ac = $request->input('ac');
             $proyek->jangka_proyek = $request->input('jangka_proyek');
+            $proyek->cv = $cv;
+            $proyek->sv = $sv;
+            $proyek->spi = $spi;
+            $proyek->cpi = $cpi;
+            $proyek->etc = $etc;
+            $proyek->ecc = $ecc;
+            $proyek->ect = $ect;
             $proyek->update();
     
             return redirect("counts")->withSuccess('Successfully');

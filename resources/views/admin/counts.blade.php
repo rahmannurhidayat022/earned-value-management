@@ -47,14 +47,7 @@
                                 <td>{{ round($proyek->cpi, 3) }}</td>
                                 <td>{{ number_format($proyek->etc) }}</td>
                                 <td>{{ number_format($proyek->ecc) }}</td>
-                                <td>
-                                    <?php 
-                                    $ect = round($proyek->ect, 1);
-                                    $splited = (string)$ect;
-                                    print "$splited[0] Minggu, </br>";
-                                    print "$splited[2] Hari";
-                                    ?>
-                                </td>
+                                <td>{{ round($proyek->ect, 1) }}</td>
                                 <td>
                                     @if($proyek->jangka_proyek === "pendek")
                                         <span class="badge bg-primary">Pendek</span>
