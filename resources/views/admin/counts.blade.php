@@ -37,21 +37,27 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{ $proyek->nama_proyek }}</td>
-                                <td>{{ $proyek->ptc }}</td>
-                                <td>{{ $proyek->ptt }}</td>
-                                <td>{{ $proyek->pv }}</td>
-                                <td>{{ $proyek->ev }}</td>
-                                <td>{{ $proyek->ac }}</td>
-                                <td>{{ $proyek->cv }}</td>
-                                <td>{{ $proyek->spi }}</td>
-                                <td>{{ $proyek->cpi }}</td>
-                                <td>{{ $proyek->etc }}</td>
-                                <td>{{ $proyek->ecc }}</td>
-                                <td>{{ $proyek->ect }}</td>
-                                <td>{{ $proyek->jangka_proyek }}</td>
+                                <td>{{ number_format($proyek->ptc) }}</td>
+                                <td>{{ $proyek->ptt }} Minggu</td>
+                                <td>{{ number_format($proyek->pv) }}</td>
+                                <td>{{ number_format($proyek->ev) }}</td>
+                                <td>{{ number_format($proyek->ac) }}</td>
+                                <td>{{ number_format($proyek->cv) }}</td>
+                                <td>{{ number_format($proyek->spi) }}</td>
+                                <td>{{ number_format($proyek->cpi) }}</td>
+                                <td>{{ number_format($proyek->etc) }}</td>
+                                <td>{{ number_format($proyek->ecc) }}</td>
+                                <td>{{ number_format($proyek->ect) }}</td>
+                                <td>
+                                    @if($proyek->jangka_proyek === "pendek")
+                                        <span class="badge bg-primary">Pendek</span>
+                                    @elseif($proyek->jangka_proyek === "panjang")
+                                        <span class="badge bg-success">Panjang</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <div class="d-grid gap-2">
-                                        <div class="btn btn-secondary btn-sm">Perbaharui</div>
+                                        <a href="/update-count/{{$proyek->id}}" class="btn btn-secondary btn-sm">Perbaharui</a>
                                         <div class="btn btn-danger btn-sm">Delete</div>
                                     </div>
                                 </td>

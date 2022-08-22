@@ -30,3 +30,5 @@ Route::get('/counts', [DashboardController::class, 'index'])->name('counts');
 Route::post('/create-proyek', [DashboardController::class, 'addDataProyek'])->name('proyek.add');
 
 Route::get('/add-count', [DashboardController::class, 'addCountsView'])->name('addcounts.view');
+Route::get('/update-count/{proyek_id}', [DashboardController::class, 'updateCountsView'])->name('updatecounts.view');
+Route::put('/counts/update/{proyek_id}', [DashboardController::class, 'updateCounts'])->name('counts.update');
