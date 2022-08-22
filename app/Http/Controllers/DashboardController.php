@@ -30,6 +30,14 @@ class DashboardController extends Controller
             'jangka_proyek' => 'required',
         ]);
 
+        $cv = $request->ev - $request->ac;
+        $sv = $request->ev - $request->pv;
+        $spi = $request->ev / $request->pv;
+        $cpi = $request->ev / $request->ac;
+        $etc = ($request->ptc - $request->ev) / $cpi;
+        $ecc = $request->ptc/$cpi;
+        $ect = $request->ptt / $spi;
+
         $user = Auth::user();
         $data = $request->all();
         $check = Proyek::create([
@@ -41,6 +49,13 @@ class DashboardController extends Controller
             'ac' => $data['ac'],
             'ev' => $data['ev'],
             'jangka_proyek' => $data['jangka_proyek'],
+            'cv' => $cv,
+            'sv' => $sv,
+            'spi' => $spi,
+            'cpi' => $cpi,
+            'etc' => $etc,
+            'ecc' => $ecc,
+            'ect' => $ect,
         ]);
         return redirect('counts')->withSuccess('Successfully!');
     }

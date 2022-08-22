@@ -42,12 +42,19 @@
                                 <td>{{ number_format($proyek->pv) }}</td>
                                 <td>{{ number_format($proyek->ev) }}</td>
                                 <td>{{ number_format($proyek->ac) }}</td>
-                                <td>{{ number_format($proyek->cv) }}</td>
-                                <td>{{ number_format($proyek->spi) }}</td>
-                                <td>{{ number_format($proyek->cpi) }}</td>
+                                <td>{{ round($proyek->cv, 3) }}</td>
+                                <td>{{ round($proyek->spi, 3) }}</td>
+                                <td>{{ round($proyek->cpi, 3) }}</td>
                                 <td>{{ number_format($proyek->etc) }}</td>
                                 <td>{{ number_format($proyek->ecc) }}</td>
-                                <td>{{ number_format($proyek->ect) }}</td>
+                                <td>
+                                    <?php 
+                                    $ect = round($proyek->ect, 1);
+                                    $splited = (string)$ect;
+                                    print "$splited[0] Minggu, </br>";
+                                    print "$splited[2] Hari";
+                                    ?>
+                                </td>
                                 <td>
                                     @if($proyek->jangka_proyek === "pendek")
                                         <span class="badge bg-primary">Pendek</span>

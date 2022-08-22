@@ -20,7 +20,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col bg-light">
+        <div class="col-10 bg-light">
             @yield('sidecontent')
         </div>
     </div>
