@@ -15,7 +15,12 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+Route::get('/', function() {
+    return redirect('login');
+});
+
 Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/custom-signin', [AuthController::class, 'createSignin'])->name('signin.custom');
 
 
