@@ -18,6 +18,7 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama Proyek</th>
+                            <th scope="col">Created</th>
                             <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Planned Total Cost">PTC</th>
                             <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Planned Total Time">PTT</th>
                             <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Planned Value">PV</th>
@@ -40,6 +41,7 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{ $proyek->nama_proyek }}</td>
+                                <td>{{$proyek->nama}}</td>
                                 <td>{{ number_format($proyek->ptc) }}</td>
                                 <td>{{ $proyek->ptt }} Minggu</td>
                                 <td>{{ number_format($proyek->pv) }}</td>

@@ -13,8 +13,12 @@ class DashboardController extends Controller
     public function index()
     {
         if(Auth::check()){
+            $proyeks = Proyek::join('users', 'users.id', '=', 'proyeks.user_id')
+            ->select('users.nama', 'proyeks.*')
+            ->paginate(3);
+
             return view('admin.counts', [
-                'proyeks' => Proyek::paginate(3),
+                'proyeks' => $proyeks,
             ]);
         }
         return redirect("login")->withSuccess('Access is not permitted');
@@ -59,6 +63,7 @@ class DashboardController extends Controller
             'ecc' => $ecc,
             'ect' => $ect,
         ]);
+        
         return redirect('counts')->withSuccess('Successfully!');
     }
 
