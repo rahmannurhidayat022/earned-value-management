@@ -7,6 +7,12 @@
             <hr>
             <ul class="nav d-flex flex-column justify-content-between" style="font-weight: bold">
                 <li class="nav-item d-flex align-items-center py-2 ps-3 rounded bg-light my-1">
+                    <img width="20px" src="{{ asset('icons/dollar.svg') }}" alt="user icon">
+                    <a class="nav-link text-dark active" aria-current="page" href="/dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center py-2 ps-3 rounded bg-light my-1">
                     <img width="20px" src="{{ asset('icons/user.svg') }}" alt="user icon">
                     <a class="nav-link text-dark active" aria-current="page" href="/profile/{{Auth::user()->id}}">
                         User

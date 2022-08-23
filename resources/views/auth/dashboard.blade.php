@@ -8,20 +8,22 @@
             <div class="card-title h4 mb-4">Dashboard</div>
             <div class="row">
                 <div class="col-3">
-                    <a style="text-decoration: none;" class="text-dark" href="/jangka-pendek">
-                        <div style="min-height: 200px" class="card border border-success p-4 d-flex align-items-center justify-content-center">
-                            <img width="60px" src="{{ asset('icons/chevron-up.svg') }}" alt="dollar">
-                            <p class="text-center mt-4">Perhitungan Jangka Pendek</p>
-                        </div>
-                    </a>
+                    <div style="min-height: 200px" class="card border border-success p-4 d-flex align-items-center justify-content-center">
+                        <span class="fs-2">{{$total_proyek}}</span>
+                        <p class="text-center mt-4">Total Proyek</p>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <a style="text-decoration: none;" class="text-dark" href="#">
-                        <div style="min-height: 200px" class="card border border-success p-4 d-flex align-items-center justify-content-center">
-                            <img width="60px" src="{{ asset('icons/chevrons-up.svg') }}" alt="dollar">
-                            <p class="text-center mt-4">Perhitungan Jangka Panjang</p>
-                        </div>
-                    </a>
+                    <div style="min-height: 200px" class="card border border-success p-4 d-flex align-items-center justify-content-center">
+                        <span class="fs-2">{{$proyek_pendek}}</span>
+                        <p class="text-center mt-4">Proyek Jangka Pendek</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div style="min-height: 200px" class="card border border-success p-4 d-flex align-items-center justify-content-center">
+                        <span class="fs-2">{{$proyek_panjang}}</span>
+                        <p class="text-center mt-4">Proyek Jangka Panjang</p>
+                    </div>
                 </div>
             </div>
         </div>

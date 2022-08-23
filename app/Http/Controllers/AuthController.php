@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Proyek;
 use Session;
 use Hash;
 
@@ -38,7 +39,7 @@ class AuthController extends Controller
         if(Auth::check()) {
             return redirect('dashboard');
         }
-        
+
         return view('auth.signup');
     }
 
@@ -68,7 +69,15 @@ class AuthController extends Controller
     public function dashboardView()
     {
         if(Auth::check()){
-            return view('auth.dashboard');
+            $total_proyek = Proyek::count();
+            $proyek_pendek = Proyek::where('jangka_proyek', 'pendek')->count();
+            $proyek_panjang = Proyek::where('jangka_proyek', 'panjang')->count();
+
+            return view('auth.dashboard', [
+                'total_proyek' => $total_proyek,
+                'proyek_pendek' => $proyek_pendek,
+                'proyek_panjang' => $proyek_panjang,
+            ]);
         }
         return redirect("login")->withSuccess('Access is not permitted');
     }
