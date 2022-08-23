@@ -54,15 +54,15 @@
                     <div class="row my-3">
                         <div class="col-3">Cost Variance (CV)</div>
                         <div class="col-1">:</div>
-                        <div class="col-8">Rp. {{ round($proyek->cv, 3) }}</div>
+                        <div class="col-8">Rp. {{ number_format($proyek->cv) }}</div>
                         <div class="col-12">
                             <small class="text-muted">*Jika nilai yang dihasilkan CV negative, maka biaya yang dikeluarkan lebih tinggi dari anggaran rencana.</small>
                         </div>
                     </div>
                     <div class="row my-3">
-                        <div class="col-3">Actual Cost (SV)</div>
+                        <div class="col-3">Schedule Variance (SV)</div>
                         <div class="col-1">:</div>
-                        <div class="col-8">Rp. {{ round($proyek->sv, 3) }}</div>
+                        <div class="col-8">Rp. {{ number_format($proyek->sv) }}</div>
                         <div class="col-12">
                             <small class="text-muted">*Jika nilai yang dihasilkan SV negative, maka waktu pelaksanaan proyek keterlambatan dari rencana awal.</small>
                         </div>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="row my-3">
-                        <div class="col-3">Estimate to Completion ETC</div>
+                        <div class="col-3">Estimate to Completion (ETC)</div>
                         <div class="col-1">:</div>
                         <div class="col-8">Rp. {{ number_format($proyek->etc) }}</div>
                         <div class="col-12">

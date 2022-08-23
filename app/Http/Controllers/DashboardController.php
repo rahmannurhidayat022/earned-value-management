@@ -14,7 +14,7 @@ class DashboardController extends Controller
     {
         if(Auth::check()){
             return view('admin.counts', [
-                'proyeks' => Proyek::paginate(5),
+                'proyeks' => Proyek::paginate(3),
             ]);
         }
         return redirect("login")->withSuccess('Access is not permitted');
@@ -180,7 +180,7 @@ class DashboardController extends Controller
     public function proyekDetail($proyek_id)
     {
         $proyek = Proyek::find($proyek_id);
-        
+
         return view('admin.proyek_detail', ['proyek' => $proyek]);
     }
 }

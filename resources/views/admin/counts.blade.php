@@ -16,18 +16,18 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama Proyek</th>
-                            <th scope="col">Anggaran proyek/PTC</th>
-                            <th scope="col">Total waktu proyek/PTT</th>
-                            <th scope="col">PV</th>
-                            <th scope="col">EV</th>
-                            <th scope="col">AC</th>
-                            <th scope="col">CV</th>
-                            <th scope="col">SV</th>
-                            <th scope="col">SPI</th>
-                            <th scope="col">CPI</th>
-                            <th scope="col">ETC</th>
-                            <th scope="col">ECC</th>
-                            <th scope="col">ECT</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Planned Total Cost">PTC</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Planned Total Time">PTT</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Planned Value">PV</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Earned Value">EV</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual Cost">AC</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Cost Variance">CV</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Schedule Variance">SV</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Schedule Performance Index">SPI</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Cost Performance Index">CPI</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Estimate to Completion">ETC</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Estimate Completion Cost">ECC</th>
+                            <th scope="col" data-bs-toggle="tooltip" data-bs-placement="top" title="Estimate Complation Time">ECT</th>
                             <th scope="col">Jangka Proyek</th>
                             <th scope="col">Keterangan</th>
                         </tr>
