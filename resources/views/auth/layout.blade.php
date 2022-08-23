@@ -8,7 +8,7 @@
             <ul class="nav flex-column" style="font-weight: bold">
                 <li class="nav-item d-flex align-items-center py-2 ps-3 rounded bg-light my-1">
                     <img width="20px" src="{{ asset('icons/user.svg') }}" alt="user icon">
-                    <a class="nav-link text-dark active" aria-current="page" href="#">
+                    <a class="nav-link text-dark active" aria-current="page" href="/profile/{{Auth::user()->id}}">
                         User
                     </a>
                 </li>

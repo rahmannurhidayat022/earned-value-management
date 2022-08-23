@@ -33,3 +33,6 @@ Route::get('/add-count', [DashboardController::class, 'addCountsView'])->name('a
 Route::get('/update-count/{proyek_id}', [DashboardController::class, 'updateCountsView'])->name('updatecounts.view');
 Route::put('/counts/update/{proyek_id}', [DashboardController::class, 'updateCounts'])->name('counts.update');
 Route::delete('/counts/delete/{proyek_id}', [DashboardController::class, 'removeProyek'])->name('counts.delete');
+
+Route::get('/profile/{user_id}', [DashboardController::class, 'profileView'])->name('profile');
+Route::put('/profile/{user_id}', [DashboardController::class, 'profileUpdate'])->name('profile.update');

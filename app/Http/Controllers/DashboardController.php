@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Models\Proyek;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use App\Models\User;
+use Hash;
 
 class DashboardController extends Controller
 {
@@ -129,6 +131,48 @@ class DashboardController extends Controller
             Proyek::find($proyek_id)->delete();
             
             return redirect("counts")->withSuccess('Successfully');
+        }
+        return redirect("login")->withSuccess('Access is not permitted');
+    }
+
+    public function profileView($user_id)
+    {
+        if(Auth::check()) {
+            $user = User::find($user_id);
+            return view('admin.profile', ["user" => $user]);
+        }
+
+        return redirect("login")->withSuccess('Access is not permitted');
+    }
+
+    public function profileUpdate(Request $request, $user_id)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'username' => 'required',
+        ]);
+
+        if(Auth::check())
+        {
+            if($request->input('password'))
+            {
+                $hashed = Hash::make($request->input('password'));
+                $user = User::find($user_id);
+                $user->nama = $request->input('nama');
+                $user->jabatan = $request->input('jabatan');
+                $user->username = $request->input('username');
+                $user->password = $hashed;
+                $user->update();
+                return redirect('profile/'.$user_id)->withSuccess('Successfully');
+            }
+    
+                $user = User::find($user_id);
+                $user->nama = $request->input('nama');
+                $user->jabatan = $request->input('jabatan');
+                $user->username = $request->input('username');
+                $user->update();
+                return redirect('profile/'.$user_id)->withSuccess('Successfully');
         }
         return redirect("login")->withSuccess('Access is not permitted');
     }
