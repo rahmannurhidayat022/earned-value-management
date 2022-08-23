@@ -37,10 +37,12 @@
                                 @endif
                             </div>
 
-                            <div class="form-group mb-2">
-                                <div class="checkbox">
-                                    <label><input type="checkbox" name="remember">Remember</label>
-                                </div>
+                            <div class="mb-3">
+                                <select id="role" name="role" class="form-select" aria-label="Default select example" required>
+                                    <option>Jenis role akun</option>
+                                    <option value="pm">Project Manager</option>
+                                    <option value="owner">Owner</option>
+                                </select>
                             </div>
 
                             <div class="d-grid mx-auto">

@@ -50,6 +50,7 @@ class AuthController extends Controller
             'password' => 'required|min:6',
             'nama' => 'required',
             'jabatan' => 'required',
+            'role' => 'required',
         ]);
         $data = $request->all();
         $check = $this->createUser($data);
@@ -62,6 +63,7 @@ class AuthController extends Controller
         'username' => $data['username'],
         'jabatan' => $data['jabatan'],
         'nama' => $data['nama'],
+        'role' => $data['role'],
         'password' => Hash::make($data['password'])
       ]);
     }

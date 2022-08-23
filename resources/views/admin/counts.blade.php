@@ -7,9 +7,11 @@
     <div class="card border-0 p-2 shadow-sm">
         <div class="card-body">
             <div class="card-title h4 mb-4">Data Proyek</div>
+            @if(Auth::user()->role === "owner")
             <a type="button" href="/add-count" class="btn btn-success mb-4">
             Tambah Data Proyek
             </a>
+            @endif
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -63,8 +65,10 @@
                                         @method('DELETE')
                                         <div class="d-grid gap-2">
                                             <a href="/proyek/{{$proyek->id}}" class="btn btn-outline-secondary btn-sm">Detail</a>
+                                            @if(Auth::user()->role === "owner")
                                             <a href="/update-count/{{$proyek->id}}" class="btn btn-secondary btn-sm">Perbaharui</a>
                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            @endif
                                         </div>
                                     </form>
                                 </td>
