@@ -176,4 +176,11 @@ class DashboardController extends Controller
         }
         return redirect("login")->withSuccess('Access is not permitted');
     }
+
+    public function proyekDetail($proyek_id)
+    {
+        $proyek = Proyek::find($proyek_id);
+        
+        return view('admin.proyek_detail', ['proyek' => $proyek]);
+    }
 }

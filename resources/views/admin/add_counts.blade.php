@@ -1,9 +1,10 @@
-@extends('auth.layout')
-@section('sidecontent')
+@extends('app')
+
+@section('content')
 
 <div class="pt-4 container">
     @extends('alert')
-    <div class="card border-0 p-2 shadow-sm">
+    <div class="card border-0 p-2 shadow-sm my-5">
         <div class="card-body">
             <div class="card-title">
                 <a type="button" href="/counts" class="btn btn-light mb-4">Kembali</a>

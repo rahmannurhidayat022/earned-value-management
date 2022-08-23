@@ -41,3 +41,5 @@ Route::delete('/counts/delete/{proyek_id}', [DashboardController::class, 'remove
 
 Route::get('/profile/{user_id}', [DashboardController::class, 'profileView'])->name('profile');
 Route::put('/profile/{user_id}', [DashboardController::class, 'profileUpdate'])->name('profile.update');
+
+Route::get('/proyek/{proyek_id}', [DashboardController::class, 'proyekDetail'])->name('proyek');

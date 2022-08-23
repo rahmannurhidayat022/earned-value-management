@@ -12,6 +12,10 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
+
+        html,body,* {
+            box-sizing: border-box;
+        }
     </style>
 </head>
 

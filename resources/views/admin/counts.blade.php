@@ -22,6 +22,7 @@
                             <th scope="col">EV</th>
                             <th scope="col">AC</th>
                             <th scope="col">CV</th>
+                            <th scope="col">SV</th>
                             <th scope="col">SPI</th>
                             <th scope="col">CPI</th>
                             <th scope="col">ETC</th>
@@ -43,6 +44,7 @@
                                 <td>{{ number_format($proyek->ev) }}</td>
                                 <td>{{ number_format($proyek->ac) }}</td>
                                 <td>{{ round($proyek->cv, 3) }}</td>
+                                <td>{{ round($proyek->sv, 3) }}</td>
                                 <td>{{ round($proyek->spi, 3) }}</td>
                                 <td>{{ round($proyek->cpi, 3) }}</td>
                                 <td>{{ number_format($proyek->etc) }}</td>
@@ -60,6 +62,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <div class="d-grid gap-2">
+                                            <a href="/proyek/{{$proyek->id}}" class="btn btn-outline-secondary btn-sm">Detail</a>
                                             <a href="/update-count/{{$proyek->id}}" class="btn btn-secondary btn-sm">Perbaharui</a>
                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                         </div>

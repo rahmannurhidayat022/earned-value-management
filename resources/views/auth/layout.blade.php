@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('content')
-    <div class="row w-100">
-        <div class="col-2 bg-success bg-gradient pt-5 ps-4" style="height: 100vh">
+    <div class="row w-100" style="height: 100vh">
+        <div class="col-2 bg-success bg-gradient pt-5 ps-4" style="height: 100%">
             <h1 class="h3 text-white">Earned Value Management (EVM)</h1>
             <hr>
             <ul class="nav d-flex flex-column justify-content-between" style="font-weight: bold">
